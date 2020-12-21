@@ -14,8 +14,8 @@ function Login({login}) {
     const [currentPassword, setCurrentPassword]=useState("")
     const userNames =()=> window.localStorage.getItem('Username') || " "
     const [ user,setUser ] = useState(userNames)
-    const userName = 'admin'
-    const password = 'admin'
+    const userName = window.localStorage.getItem('Username')
+    const password = window.localStorage.getItem('password')
     const [error, setError] = useState(false)   
     let history = useHistory()
 
