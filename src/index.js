@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
-import store from './state/store'
+import store from './state/store';
+import {BrowserRouter as Router } from 'react-router-dom'
 
 
 const unsubscribe = store.subscribe(()=>{console.log("subscribe",store.getState())})
@@ -17,7 +18,7 @@ console.log("store", store.getState())
 ReactDOM.render(
   <Provider store={store}>
     <React.StrictMode> 
-          <App />
+      <Router basename={process.env.PUBLIC_URL} > <App /></Router>
     </React.StrictMode></Provider>,
     document.getElementById('root')
 );
